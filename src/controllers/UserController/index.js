@@ -26,7 +26,16 @@ const UserController={
         }catch(err){
             return res.status(400).json(err)
         }
-    }
+    },
+    async deleteUser(req,res){
+        const{user_id}=req.params
+         try{
+             const deletedUser= await User.findByIdAndDelete(user_id)
+             return res.status(200).json(deletedUser)
+         }catch(err){
+             return res.status(400).json(err)
+         }
+     }
 }
 
 module.exports=UserController
