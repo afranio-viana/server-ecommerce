@@ -13,6 +13,10 @@ const Schema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
+    userNickname:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    },
     address:{
         street:{
             type: String,

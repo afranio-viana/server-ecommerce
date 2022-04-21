@@ -27,7 +27,11 @@ const Schema = new mongoose.Schema({
     userPassword:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-    }
+    },
+    userNickname:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    },
 })
 
 module.exports=mongoose.model('Product', Schema)

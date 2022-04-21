@@ -27,6 +27,18 @@ const UserController={
             return res.status(400).json(err)
         }
     },
+    async updateUser(req,res){
+        const bodyData=req.body
+        const {user_id}=req.params
+
+        try{
+            const updatedUser=await User.findByIdAndUpdate(user_id,bodyData,{new: true})
+            return res.status(200).json(updatedUser)
+
+        }catch(err){
+            return res.status(400).json(err)
+        }
+    },
     async deleteUser(req,res){
         const{user_id}=req.params
          try{

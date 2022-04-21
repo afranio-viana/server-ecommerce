@@ -33,7 +33,16 @@ const CartController={
         }catch(err){
             return res.status(400).json(err)
         }
-    }
+    },
+    async deleteCart(req,res){
+        const{cart_id}=req.params
+         try{
+             const deletedCart= await Cart.findByIdAndDelete(cart_id)
+             return res.status(200).json(deletedCart)
+         }catch(err){
+             return res.status(400).json(err)
+         }
+     }
 
 }
 
