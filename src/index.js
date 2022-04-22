@@ -16,6 +16,7 @@ mongoose.connect(process.env.MONGO_URI,{
 app.use(cors())
 app.use(express.json())
 app.use(routes)
-const port = process.env.PORT || 3000 ;
 
-app.listen(port, () =>console.log('Server running!'))
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
