@@ -7,7 +7,7 @@ const routes =require('./routes')
 dotenv.config()
 
 const app = express()
-
+MONGO_URI= 'mongodb+srv://ecommerce_api:ecommerce_api@cluster0.qfsvy.mongodb.net/ecommerce_api?retryWrites=true&w=majority'
 mongoose.connect(process.env.MONGO_URI,{
     useUnifiedTopology: true,
     useNewUrlParser: true
