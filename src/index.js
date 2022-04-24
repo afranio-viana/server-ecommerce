@@ -3,11 +3,10 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const routes =require('./routes')
 
-require('dotenv').config()
 
 const app = express()
-
-mongoose.connect(process.env.MONGO_URI,{
+const MONGO_URI= 'mongodb+srv://ecommerce_api:ecommerce_api@cluster0.qfsvy.mongodb.net/ecommerce_api?retryWrites=true&w=majority'
+mongoose.connect(MONGO_URI,{
     useUnifiedTopology: true,
     useNewUrlParser: true
 },console.log('Conectado com o banco'))
