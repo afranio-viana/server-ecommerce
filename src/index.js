@@ -7,8 +7,8 @@ const routes =require('./routes')
 dotenv.config()
 
 const app = express()
-
-mongoose.connect(process.env.MONGO_URI,{
+const MONGO_URI=process.env.MONGO_URI
+mongoose.connect(MONGO_URI,{
     useUnifiedTopology: true,
     useNewUrlParser: true
 },console.log('Conectado com o banco'))
@@ -18,4 +18,4 @@ app.use(express.json())
 app.use(routes)
 const port = process.env.PORT || 3000 ;
 
-app.listen(port, () =>console.log('Server running!'))
+app.listen(port, () =>console.log(typeof MONGO_URI))
