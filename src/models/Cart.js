@@ -5,6 +5,10 @@ const Schema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Product'
     }],
+    productQuantity:[{
+        type: Number,
+        required: true
+    }],
     userName:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
