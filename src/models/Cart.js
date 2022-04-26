@@ -22,6 +22,10 @@ const Schema = new mongoose.Schema({
         ref: 'User',
     },
     address:{
+        district:{
+            type: String,
+            required: true
+        },
         street:{
             type: String,
             required: true
